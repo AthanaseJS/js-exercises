@@ -8,8 +8,21 @@
   <body>
     <h2>Math methods examples!</h2>
     <script src="/js-exercises/math.js"></script>
-    <p id="otpt1">'Random number is - '+ myRundom()</p>
-    <p id="otpt2"></p>
-    <p id="otpt3"></p>
+    <button onclick="myRundom()">Calculate rundom number</button>
+    <p id="demo1"></p>
+    <hr />
+    <br />
+    <button onclick="myComparison()">Comparison 5 and 10</button>
+    <p id="demo3"></p>
+    <hr />
+    <br />
+
+    <button
+      onclick="  document.getElementById('demo2').innerHTML =
+    ' and square of 9 is ' + Math.sqrt(9)"
+    >
+      Calculate scuare
+    </button>
+    <p id="demo2"></p>
   </body>
 </html>
