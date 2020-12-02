@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 id="text">JavaScript can change style of HTML</h2>
+
+    <button
+      onclick="document.getElementById('text').style.fontSize='50px'
+    ; document.getElementById('text').innerHTML='HTML was restored to 50 px !' "
+    >
+      increase fontSize
+    </button>
+
+    <button
+      onclick="document.getElementById('text').style.fontSize='35px'; 
+      document.getElementById('text').innerHTML='HTML was changed to 35 px !' "
+    >
+      reduce fontSize
+    </button>
+  </body>
+</html>
