@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>test exercise - counting of forms elements</h1>
+    <form id="frm1" action="/action_page.php">
+      <label for="fname">First Name :</label>
+      <input type="text" name="fname" value="name" /><br />
+      <label for="sname">Last Name</label>
+      <input type="text" name="sname" value="last" name /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <p>Click "try it" to mdisp[lay the value of each element in the form.</p>
+
+    <button onclick="myFunction()">try it</button>
+    <script>
+      function myFunction() {
+        var x = document.forms['frm1']
+      }
+    </script>
+  </body>
+</html>
