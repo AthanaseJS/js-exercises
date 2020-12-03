@@ -4,20 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #text {
+        border: thick solid blue;
+      }
+    </style>
   </head>
   <body>
-    <h2 id="text">JavaScript can change style of HTML</h2>
+    <div id="text">JavaScript can change style of HTML</div>
 
     <button
       onclick="document.getElementById('text').style.fontSize='50px'
-    ; document.getElementById('text').innerHTML='HTML was restored to 50 px !' "
+    ; document.getElementById('text').innerHTML='HTML was restored to 50 px !' 
+    ; document.getElementById('text').style.borderColor = 'red' "
     >
       increase fontSize
     </button>
 
     <button
       onclick="document.getElementById('text').style.fontSize='35px'; 
-      document.getElementById('text').innerHTML='HTML was changed to 35 px !' "
+      document.getElementById('text').innerHTML='HTML was changed to 35 px !' 
+      ; document.getElementById('text').style.borderColor = 'green' "
     >
       reduce fontSize
     </button>
