@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>String concatuation</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+      str1 = 'This is'
+      str2 = 'a nice day !'
+      document.getElementById('demo').innerHTML = str1 + ' ' + str2
+      str1 += '->' + str2
+      document.getElementById('demo2').innerHTML = str1
+    </script>
+  </body>
+</html>

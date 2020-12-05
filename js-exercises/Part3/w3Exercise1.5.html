@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript varables !</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+      var x
+      var y
+      x = 10
+      y = 20
+      var s = 'Volvo'
+      document.getElementById('demo').innerHTML = x + y + s
+
+      var car
+      document.getElementById('demo2').innerHTML = car + '<br>' + typeof car
+
+      var st = ''
+      document.getElementById('demo3').innerHTML =
+        'The value is -' + st + '<br>' + 'The type is -' + typeof st
+    </script>
+  </body>
+</html>

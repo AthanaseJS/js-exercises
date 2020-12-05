@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Use js function</h1>
+    <p id="demo"></p>
+
+    <script>
+      var s = 'Hello world ! - (printed by myFunction)'
+      myFunction(s)
+
+      function myFunction(sf) {
+        document.getElementById('demo').innerHTML = sf
+      }
+    </script>
+
+    <button onclick="myFunction('this is button fru muFanction :)')">
+      Click me for change !
+    </button>
+  </body>
+</html>
