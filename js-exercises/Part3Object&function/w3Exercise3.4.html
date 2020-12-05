@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Convert F <--> C !</h1>
+    <h2>type value</h2>
+    <p id="demo">test</p>
+
+    <label for="inputF">Fahrenheit : </label>
+    <input
+      type="text"
+      id="inputF"
+      oninput="myFunction(document.getElementById('inputF').value,'F')"
+    />
+    <label for="inputC">Celsius : </label>
+    <input
+      type="text"
+      id="inputC"
+      oninput="myFunction(document.getElementById('inputC').value,'C')"
+    />
+
+    <script>
+      function myFunction(vl, typef) {
+        document.getElementById('demo').innerHTML =
+          'myFunction is called !' + 'value is-' + vl + '; Type is -' + typef
+        if ((typef = 'F')) {
+          document.getElementById('inputC').value = Math.round(
+            (5 / 9) * (vl - 32)
+          )
+        } else {
+          document.getElementById('inputF').value = Math.round(
+            vl * (9 / 5) + 32
+          )
+          document.getElementById('demo').innerHTML =
+            'value is-' + vl * (9 / 5) + 32 + '; Type is -' + typef
+        }
+      }
+    </script>
+  </body>
+</html>

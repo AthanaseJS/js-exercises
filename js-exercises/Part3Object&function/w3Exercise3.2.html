@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Use object an saparate finction !</h1>
+    <p id="demo">test</p>
+
+    <script>
+      var person = {
+        name: 'Athanase',
+        lastName: 'Makaridi',
+        age: '52',
+      }
+      document.getElementById('demo').innerHTML = person.name
+
+      function myFunction(fullName, age) {
+        document.getElementById('demo').innerHTML =
+          'Full name is -' + fullName + '<br>' + ' Age is-' + age
+      }
+    </script>
+    <button onclick="myFunction(person.name+' '+person.lastName,person.age)">
+      prin personal data
+    </button>
+  </body>
+</html>
