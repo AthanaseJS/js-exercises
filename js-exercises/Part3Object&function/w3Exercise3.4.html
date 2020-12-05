@@ -27,7 +27,7 @@
       function myFunction(vl, typef) {
         document.getElementById('demo').innerHTML =
           'myFunction is called !' + 'value is-' + vl + '; Type is -' + typef
-        if ((typef = 'F')) {
+        if (typef == 'F') {
           document.getElementById('inputC').value = Math.round(
             (5 / 9) * (vl - 32)
           )
@@ -35,8 +35,6 @@
           document.getElementById('inputF').value = Math.round(
             vl * (9 / 5) + 32
           )
-          document.getElementById('demo').innerHTML =
-            'value is-' + vl * (9 / 5) + 32 + '; Type is -' + typef
         }
       }
     </script>
