@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>use object</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+      // single object
+      var person = { firstName: 'Athanase', lasName: 'Makaridi', age: '53' }
+
+      document.getElementById('demo').innerHTML =
+        person.firstName + ' ' + person.lasName + ' ' + person.age
+
+      // many objects
+      function Car(maker, model, id, color) {
+        this.maker = maker
+        this.model = model
+        this.id = id
+        this.color = color
+        this.shortDscr = function () {
+          return this.model + ' ' + this.id
+        }
+      }
+
+      var myCar = new Car('Mazda', 'mazda 3', '010101', 'black')
+      var smCar = new Car('Mazda', 'mazda 3', '020202', 'brown')
+      //add properties
+      smCar.year = '2017'
+      //add method
+      myCar.description = function () {
+        return (
+          this.maker + ' ' + this.model + ' ' + this.color + ' ' + this.year
+        )
+      }
+      document.getElementById('demo2').innerHTML = myCar.description()
+      document.getElementById('demo3').innerHTML = smCar.shortDscr()
+    </script>
+  </body>
+</html>
