@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Classes in JS</h1>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+
+    <script>
+      let spCar = new Car('Mazda', 2017)
+      myCar = new Car('Mazda', 2005)
+      document.getElementById('demo2').innerHTML = 'car is -' + myCar.age()
+      spCar.showCar()
+
+      class Car {
+        constructor(name, year) {
+          this.name = name
+          this.year = year
+        }
+        age() {
+          let date = new Date()
+          return date.getFullYear - this.year
+        }
+        showCar() {
+          document.getElementById('demo').innerHTML =
+            this.name + ' ' + this.year
+        }
+      }
+    </script>
+  </body>
+</html>
