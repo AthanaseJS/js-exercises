@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rack_Paper_Scissors</title>
+</head>
+<body>
+    <p>Rack Paper Scissors</p>
+    <button onclick="console.log(clickButton('Rock'));" >Rack</button>
+    <button onclick="alert('result of game is - '+clickButton('Paper'));" >Paper</button>
+    <button onclick="console.log(clickButton('Scissor'))">Scissors</button>
+        
+    <Script>
+        let randomEntity = ''
+        function clickButton(buttonName){
+            const randomNumber = console.log( Math.random());
+        
+            if (randomNumber < 1/3) {
+                randomEntity=('rock') } 
+            else if (randomNumber < 2/3) {
+                randomEntity=('paper')}
+            else {
+                randomEntity=('scissor')}
+            
+            let result ='Something going wrong !'
+            if (buttonName==='Rock') {
+                if (randomEntity==='rock') {result= 'Tie.'}
+                else if (buttonName==='Paper') {result='You lose.'}
+                else {result='You win.'}  } 
+            if (buttonName==='Paper') {
+                if (randomEntity==='rock') {result= 'Ypou lose.'}
+                else if (buttonName==='Paper') {result='Tie.'}
+                else {result='You win.'}  } 
+            if (buttonName==='Scissor') {
+                if (randomEntity==='rock') {result= 'You win.'}
+                else if (buttonName==='Paper') {result='You lose.'}
+                else {result='Tie.'}}
+            return result;}
+    </Script>
+</body>
+</html>
