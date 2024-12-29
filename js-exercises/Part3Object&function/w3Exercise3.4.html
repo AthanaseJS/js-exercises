@@ -24,17 +24,17 @@
     />
 
     <script>
-      function myFunction(vl, typef) {
-        document.getElementById('demo').innerHTML =
-          'myFunction is called !' + 'value is-' + vl + '; Type is -' + typef
-        if (typef == 'F') {
-          document.getElementById('inputC').value = Math.round(
+      function myFunction(vl, typeF) {
+        document.getElementById("demo").innerHTML =
+          "myFunction is called !" + "value is-" + vl + "; Type is -" + typeF;
+        if (typeF == "F") {
+          document.getElementById("inputC").value = Math.round(
             (5 / 9) * (vl - 32)
-          )
+          );
         } else {
-          document.getElementById('inputF').value = Math.round(
+          document.getElementById("inputF").value = Math.round(
             vl * (9 / 5) + 32
-          )
+          );
         }
       }
     </script>
