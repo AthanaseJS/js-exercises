@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
   <body>
     <h2>JavaScript Class Gettter/Setter</h2>
 
@@ -13,19 +18,19 @@
     <script>
       class Car {
         constructor(brand) {
-          this.carname = brand
+          this.carname = brand;
         }
         get cname() {
-          return this.carname
+          return this.carname;
         }
         set cname(x) {
-          this.carname = x
+          this.carname = x;
         }
       }
 
-      let myCar = new Car('Ford')
+      let myCar = new Car("Ford");
 
-      document.getElementById('demo').innerHTML = myCar.cname
+      document.getElementById("demo").innerHTML = myCar.cname;
     </script>
   </body>
 </html>
