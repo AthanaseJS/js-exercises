@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid html !</title>
     <style>
       * {
         box-sizing: border-box;
@@ -22,33 +25,33 @@
       /* The grid container */
       .grid-container {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
         grid-template-areas:
-          'header header header header header header'
-          'left left middle middle right right'
-          'footer footer footer footer footer footer';
-        /* grid-column-gap: 10px; - if you want gap between the columns */
+          "header header header"
+          "left middle right"
+          "footer footer footer";
       }
 
-      .left,
-      .middle,
-      .right {
+      .left {
+        grid-area: left;
+        background-color: #aaa;
         padding: 10px;
         height: 300px; /* Should be removed. Only for demonstration */
       }
 
-      /* Style the left column */
-      .left {
-        grid-area: left;
-      }
-
-      /* Style the middle column */
       .middle {
         grid-area: middle;
+        background-color: #bbb;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
       }
 
-      /* Style the right column */
       .right {
         grid-area: right;
+        background-color: #ccc;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
       }
 
       /* Style the footer */
@@ -62,12 +65,13 @@
       /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
       @media (max-width: 600px) {
         .grid-container {
+          grid-template-columns: 1fr;
           grid-template-areas:
-            'header header header header header header'
-            'left left left left left left'
-            'middle middle middle middle middle middle'
-            'right right right right right right'
-            'footer footer footer footer footer footer';
+            "header"
+            "left"
+            "middle"
+            "right"
+            "footer";
         }
       }
     </style>
@@ -81,21 +85,21 @@
     <p>Resize the browser window to see the responsive effect.</p>
     <p>
       <strong>Note:</strong> The Grid Layout Module is not supported in Internet
-      Explorer or Edge 15 eand earlier versions.
+      Explorer or Edge 15 and earlier versions.
     </p>
 
     <div class="grid-container">
-      <div class="header">
+      <header class="header">
         <h2>Header</h2>
-      </div>
+      </header>
 
-      <div class="left" style="background-color: #aaa">Column</div>
-      <div class="middle" style="background-color: #bbb">Column</div>
-      <div class="right" style="background-color: #ccc">Column</div>
+      <section class="left">Left Column</section>
+      <section class="middle">Middle Column</section>
+      <section class="right">Right Column</section>
 
-      <div class="footer">
+      <footer class="footer">
         <p>Footer</p>
-      </div>
+      </footer>
     </div>
   </body>
 </html>
