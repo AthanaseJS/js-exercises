@@ -3,18 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Replace Text Example</title>
   </head>
   <body>
-    <h2>replace "Microsoft" with "W3school"</h2>
+    <h2>Replace "Microsoft" with "W3school"</h2>
     <p id="demo">Please visit Microsoft</p>
 
-    <button onClick="myFunction()">Click Me</button>
+    <!-- Added type="button" -->
+    <button type="button" onClick="replaceText()">Click Me</button>
+
     <script>
-      function myFunction() {
-        var x = document.getElementById("demo").text;
-        var str = x.replace("Microsoft", "W3school");
-        document.getElementById("demo").innerHTML = str;
+      function replaceText() {
+        var paragraph = document.getElementById("demo");
+        paragraph.textContent = paragraph.textContent.replace(
+          "Microsoft",
+          "W3school"
+        );
       }
     </script>
   </body>
