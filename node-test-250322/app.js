@@ -1,9 +1,9 @@
 const os = require("os");
 var osMem = os.freemem();
-console.log(osMem);
+console.log(" Free memory: ${osMem}");
 
 var osTMem = os.totalmem();
-console.log(osTMem);
+console.log("Total Memory : ${osTMem}");
 
 var osUpTime = os.uptime();
 console.log(osUpTime / 3600);
@@ -16,7 +16,7 @@ function sayHallo(name) {
   console.log("Hello node, this is " + name + " !");
 }
 
-sayHallo("Athanase");
+sayHallo("Steve");
 
 console.log(module);
 var logger = require("./logger.js");
