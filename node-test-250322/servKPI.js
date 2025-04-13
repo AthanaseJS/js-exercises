@@ -30,7 +30,7 @@ app.get("/UCC_KPI", async (req, res) => {
     sql.close();
   }
 });
-
+// call ->  http://localhost:3000/UCC_KPI
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
