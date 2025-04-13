@@ -8,20 +8,20 @@ const config = {
   user: "sa",
   password: "qwerty",
   server: "192.168.100.140",
-  database: "EMPLOYEE",
+  database: "UCC_KPI",
   options: {
     encrypt: false,
     trustServerCertificate: true,
   },
 };
 
-// Route to get employee list
-app.get("/employees", async (req, res) => {
+// Route to get Queries list
+app.get("/UCC_KPI", async (req, res) => {
   try {
     const pool = await sql.connect(config);
     const result = await pool
       .request()
-      .query("SELECT TOP 10 * FROM [EMPLOYEE].[dbo].[Employee]");
+      .query("SELECT TOP 100 * FROM [UCC_KPI].[dev].[Queries]");
     res.json(result.recordset); // Return result as JSON
   } catch (err) {
     console.error("Database error:", err);
