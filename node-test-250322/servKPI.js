@@ -16,12 +16,12 @@ const config = {
 };
 
 // Route to get Queries list
-app.get("/UCC_KPI", async (req, res) => {
+app.get("/UCC_KPI_Cases", async (req, res) => {
   try {
     const pool = await sql.connect(config);
     const result = await pool
       .request()
-      .query("SELECT TOP 100 * FROM [UCC_KPI].[dev].[Queries]");
+      .query("SELECT TOP 2 * FROM [UCC_KPI].[dev].[Queries]");
     res.json(result.recordset); // Return result as JSON
   } catch (err) {
     console.error("Database error:", err);
@@ -30,7 +30,7 @@ app.get("/UCC_KPI", async (req, res) => {
     sql.close();
   }
 });
-// call ->  http://localhost:3000/UCC_KPI
+// call ->  http://localhost:3000/UCC_KPI_Cases
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
