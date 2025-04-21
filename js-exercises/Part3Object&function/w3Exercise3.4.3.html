@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Calculator</title>
+  </head>
+  <body>
+    <h1>Calculate between Fahrenheit <--> Celsius !</h1>
+    <h2>type value</h2>
+    <p id="demo">test</p>
+    <label for="inputC">Celsius:</label>
+    <input type="text" id="inputC" oninput="myConvert(this.value,'C')" />
+
+    <label for="inputF">Fahrenheit:</label>
+    <input type="text" id="inputF" oninput="myConvert(this.value,'F')" />
+    <script>
+      isUpdating = false;
+      function myConvert(value, tType) {
+        if (isUpdating) return;
+        isUpdating = true;
+
+        document.getElementById("demo").innerHTML =
+          "Converting " + value + "°" + tType;
+        if (!isNaN(parseFloat(value)) && isFinite(value)) {
+          const num = parseFloat(value);
+          if (tType == "C")
+            document.getElementById("inputF").value = Math.round(
+              (num * 9) / 5 + 32
+            );
+          else {
+            document.getElementById("inputC").value = Math.round(
+              ((num - 32) * 5) / 9
+            );
+          }
+        } else {
+          if (tType == "C") {
+            document.getElementById("inputC").value = "";
+            document.getElementById("inputF").value = "";
+          } else {
+            document.getElementById("inputC").value = "";
+            document.getElementById("inputF").value = "";
+          }
+        }
+        isUpdating = false;
+      }
+    </script>
+  </body>
+</html>

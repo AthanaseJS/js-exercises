@@ -1,5 +1,5 @@
 //D:\VSCode\js-exercises\node-test-250322
-//http://localhost:3000/UCC_KPI_Queries
+//http://localhost:3000/UCC_KPI_Cases
 const express = require("express");
 const sql = require("mssql");
 const cors = require("cors"); // ✅ Added this line
@@ -19,16 +19,19 @@ const config = {
   },
 };
 
-app.get("/UCC_KPI_Queries", async (req, res) => {
+app.get("/UCC_KPI_Cases", async (req, res) => {
   try {
     const pool = await sql.connect(config);
     const result = await pool.request().query(`
-      SELECT TOP (10) [Id],
-        [Sqlname],
-        [JobName],
-        [SqlText],
-        [Status]
-      FROM [UCC_KPI].[dev].[Queries]
+      SELECT TOP (1000) [CaseId]
+      ,[CategoryID]
+      ,[ProductID]
+      ,[QueriesID]
+      ,[CreateTime]
+      ,[Status]
+      ,[AdditionallInfo]
+      ,[InvestigationResults]
+  FROM [UCC_KPI].[dbo].[Cases]
     `);
     res.json(result.recordset);
   } catch (err) {
