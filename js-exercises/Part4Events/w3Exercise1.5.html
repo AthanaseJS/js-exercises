@@ -16,12 +16,35 @@ onload	  - The browser has finished loading the page
 -->
 
     <h2>split array</h2>
-    <p id="demo">test</p>
+    <p id="demo1">test 1</p>
+    <p id="demo2">test 2</p>
+
+    <label for="xName">Type your name:</label>
+    <input type="text" id="xName" oninput="myFunction(this.value)" />
+    
+    <br>
+    <button onclick="alert('This is action -> onclick!')" id="onclick">
+      On click send alert massage !
+    </button>
+  </br>
+    <button onmouseover="alert('This is action -> onmouseover!')" id="onmouseover">
+      On mouse over send alert massage !
+    </button>
+  </br>
+  <button onmouseout="alert('This is action -> onmouseout!')" id="onmouseout">
+    On mouse output send alert massage !
+  </button>
+  onkeydown
+</br>
+<button onkeydown="alert('This is action -> onkeydown!')" id="onkeydown">
+  On onkeydown send alert massage !
+</button>
+
 
     <script>
       var str = "a,b,c,d,e,f";
       var arr = str.split(",");
-      document.getElementById("demo").innerHTML = arr[1];
+      document.getElementById("demo1").innerHTML = arr[1];
     </script>
   </body>
 </html>

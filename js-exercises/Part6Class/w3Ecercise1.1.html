@@ -11,25 +11,26 @@
     <p id="demo2"></p>
 
     <script>
-      let spCar = new Car('Mazda', 2017)
-      myCar = new Car('Mazda', 2005)
-      document.getElementById('demo2').innerHTML = 'car is -' + myCar.age()
-      spCar.showCar()
-
       class Car {
         constructor(name, year) {
-          this.name = name
-          this.year = year
+          this.name = name;
+          this.year = year;
         }
         age() {
-          let date = new Date()
-          return date.getFullYear - this.year
+          let date = new Date();
+          return date.getFullYear() - this.year; // fixed here
         }
         showCar() {
-          document.getElementById('demo').innerHTML =
-            this.name + ' ' + this.year
+          document.getElementById("demo").innerHTML =
+            this.name + " " + this.year;
         }
       }
+
+      let Car1 = new Car("AlfaRomeo", 2018);
+      let Car2 = new Car("Mazda", 2005); // fixed here
+
+      document.getElementById("demo2").innerHTML = "car is -" + Car1.age();
+      Car2.showCar();
     </script>
   </body>
 </html>

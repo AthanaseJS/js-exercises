@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This is test page</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <button onmouseover="alert('Hello!')">"Click Me"</button>;
+    <button onkeydown="myFunction()">"call myFunction"</button>;
+    <script>
+      document.getElementById("p1").innerHTML = "This is Paragraph 1";
+      var x = 5;
+      document.getElementById("p2").innerHTML =
+        "this is Paragraph 2 which -> " + x.toString();
+      function myFunction() {
+        document.getElementById("p3").innerHTML =
+          "This is Paragraph 3" + "call on button click";
+      }
+    </script>
+  </body>
+</html>

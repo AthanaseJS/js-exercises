@@ -7,41 +7,43 @@
   </head>
   <body>
     <h1>use object</h1>
-    <p id="demo"></p>
+    <p id="demo1"></p>
     <p id="demo2"></p>
     <p id="demo3"></p>
+    <p id="demo4"></p>
 
     <script>
       // single object
       var person = { firstName: "Athanase", lasName: "Makaridi", age: "57" };
 
-      document.getElementById("demo").innerHTML =
+      document.getElementById("demo1").innerHTML =
         person.firstName + " " + person.lasName + " " + person.age;
 
       // many objects
       function Car(maker, model, id, color) {
-        this.maker = maker;
-        this.model = model;
-        this.id = id;
-        this.color = color;
+        this.maker = maker.toUpperCase();
+        this.model = model.toUpperCase();
+        this.id = id.toUpperCase();
+        this.color = color.toUpperCase();
         this.shortDscr = function () {
           return this.model + " " + this.id;
         };
       }
 
-      var myCar = new Car("Mazda", "mazda 3", "FH246HF", "black");
-      var smCar = new Car("Alfa-Romeo", "Julia", "wu946ww", "black");
+      var Car1 = new Car("Mazda", "mazda 3", "FH246HF", "black");
+      var Car2 = new Car("Alfa-Romeo", "Julia", "wu946ww", "black");
       //add properties
-      smCar.year = "2018";
+      Car2.year = "2018";
       //add method
-      myCar.description = function () {
+      Car2.description = function () {
         return (
           this.maker + " " + this.model + " " + this.color + " " + this.year
         );
       };
-      document.getElementById("demo2").innerHTML = myCar.description();
-      document.getElementById("demo3").innerHTML = smCar.shortDscr();
-      document.getElementById("demo2").style.color = "red";
+      document.getElementById("demo2").innerHTML = Car1.shortDscr();
+      document.getElementById("demo3").innerHTML = Car2.shortDscr();
+      document.getElementById("demo4").innerHTML = Car2.description();
+      document.getElementById("demo4").style.color = "blue";
     </script>
   </body>
 </html>
