@@ -6,28 +6,28 @@
     <title>Document</title>
   </head>
   <body>
-    <h2>function with return functionality !</h2>
+    <h1>Use object and separate function!</h1>
     <p id="demo">test</p>
 
     <script>
-      var dog = {
-        type: 'putbul',
-        name: 'chaki',
-        owner: 'John Travolta',
-      }
-      document.getElementById('demo').innerHTML = myFunction(dog)
-      function myFunction(myDog) {
-        return (
-          ' Dog type is -' +
-          myDog.type +
-          '<br>' +
-          "dog's name is -" +
-          myDog.name +
-          '<br>' +
-          "dog's owner is-" +
-          myDog.owner
-        )
+      var person = {
+        name: "Athanase",
+        lastName: "Makaridi",
+        age: 52,
+      };
+
+      document.getElementById("demo").innerHTML = person.name;
+
+      function myFunction(fullName, age) {
+        document.getElementById("demo").innerHTML =
+          "Full name is - " + fullName + "<br>" + "Age is - " + age;
       }
     </script>
+
+    <button
+      onclick="myFunction(person.name + ' ' + person.lastName, person.age)"
+    >
+      Print personal data
+    </button>
   </body>
 </html>

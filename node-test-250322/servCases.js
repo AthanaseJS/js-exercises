@@ -1,8 +1,12 @@
+//D:\VSCode\js-exercises\node-test-250322
+//http://localhost:3000/UCC_KPI_Cases
 const express = require("express");
 const sql = require("mssql");
+const cors = require("cors"); // ✅ Added this line
 
 const app = express();
 const port = 3000;
+app.use(cors());
 
 const config = {
   user: "sa",
@@ -15,23 +19,27 @@ const config = {
   },
 };
 
-// Route to get Queries list
-app.get("/UCC_KPI", async (req, res) => {
+app.get("/UCC_KPI_Cases", async (req, res) => {
   try {
     const pool = await sql.connect(config);
-    const result = await pool
-      .request()
-      .query("SELECT TOP 100 * FROM [UCC_KPI].[dev].[Queries]");
-    res.json(result.recordset); // Return result as JSON
+    const result = await pool.request().query(`
+      SELECT TOP (1000) [CaseId]
+      ,[CategoryID]
+      ,[ProductID]
+      ,[QueriesID]
+      ,[CreateTime]
+      ,[Status]
+      ,[AdditionallInfo]
+      ,[InvestigationResults]
+  FROM [UCC_KPI].[dbo].[Cases]
+    `);
+    res.json(result.recordset);
   } catch (err) {
     console.error("Database error:", err);
     res.status(500).send("Database error");
-  } finally {
-    sql.close();
   }
 });
-// call ->  http://localhost:3000/UCC_KPI
-// Start the server
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

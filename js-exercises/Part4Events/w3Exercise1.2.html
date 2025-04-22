@@ -11,8 +11,12 @@
     <button type="button" onclick="printDate()">Click me !</button>
 
     <script>
+      var trigger = true;
+
       function printDate() {
-        document.getElementById("demo").innerHTML = Date();
+        if (trigger) document.getElementById("demo").innerHTML = Date();
+        else document.getElementById("demo").innerHTML = "Tokyo time ?";
+        trigger = !trigger;
       }
     </script>
   </body>
