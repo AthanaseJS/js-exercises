@@ -20,10 +20,10 @@ onload	  - The browser has finished loading the page
     <p id="demo2">test 2</p>
 
     <label for="xName">Type your name:</label>
-    <input type="text" id="xName" oninput="myFunction(this.value)" />
+    <input type="text" id="xName" oninput="myFunction(this.value)"  />
     
     <br>
-    <button onclick="alert('This is action -> onclick!')" id="onclick">
+    <button id="onclick" onclick="alert('This is action -> onclick!')" onmouseout="alert('This is action -> onmouseout!')">
       On click send alert massage !
     </button>
   </br>
